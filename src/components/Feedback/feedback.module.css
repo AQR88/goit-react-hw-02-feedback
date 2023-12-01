@@ -1,0 +1,12 @@
+.btnDiv {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.button {
+  background-color: rgb(246, 255, 0);
+}
+.button:hover,
+.button:focus {
+  background-color: aqua;
+}
