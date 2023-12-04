@@ -31,30 +31,51 @@ class App extends Component {
       : 0;
   };
 
+  // render() {
+  //   const total = this.countTotalFeedback();
+
+  //   return (
+  //     <Section title="Please leave feedback">
+  //       <FeedbackOptions
+  //         option={Object.keys(this.state)}
+  //         onLeaveFeedback={this.onClick}
+  //       />
+
+  //       {total === 0 ? (
+  //         <Notification message="There is no feedback" />
+  //       ) : (
+  //
+  //       )}
+  //     </Section>
+  //   );
+  // }
   render() {
     const total = this.countTotalFeedback();
     const { good, bad, neutral } = this.state;
 
     return (
-      <Section title="Please leave feedback">
-        <FeedbackOptions
-          option={Object.keys(this.state)}
-          onLeaveFeedback={this.onClick}
-        />
+      <>
+        <Section title="Please leave feedback">
+          <FeedbackOptions
+            option={Object.keys(this.state)}
+            onLeaveFeedback={this.onClick}
+          />
+        </Section>
 
         {total === 0 ? (
           <Notification message="There is no feedback" />
         ) : (
-          <Statistics
-            title="Statistics"
-            good={good}
-            neutral={neutral}
-            bad={bad}
-            total={total}
-            positivePercentage={this.countPositiveFeedbackPercentage()}
-          />
+          <Section title="Statistics">
+            <Statistics
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={total}
+              positivePercentage={this.countPositiveFeedbackPercentage()}
+            />
+          </Section>
         )}
-      </Section>
+      </>
     );
   }
 }
