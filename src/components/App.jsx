@@ -31,24 +31,6 @@ class App extends Component {
       : 0;
   };
 
-  // render() {
-  //   const total = this.countTotalFeedback();
-
-  //   return (
-  //     <Section title="Please leave feedback">
-  //       <FeedbackOptions
-  //         option={Object.keys(this.state)}
-  //         onLeaveFeedback={this.onClick}
-  //       />
-
-  //       {total === 0 ? (
-  //         <Notification message="There is no feedback" />
-  //       ) : (
-  //
-  //       )}
-  //     </Section>
-  //   );
-  // }
   render() {
     const total = this.countTotalFeedback();
     const { good, bad, neutral } = this.state;
