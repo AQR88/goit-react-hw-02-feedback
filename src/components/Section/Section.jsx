@@ -1,11 +1,10 @@
 import css from './section.module.css';
 const Section = ({ title, children }) => {
   return (
-    <section className={css.section}>
-      {title !== false && <h2>{title}</h2>}
-      {children !== false && children}
-    </section>
+    <div className={css.section}>
+      {title !== undefined && <h2>{title}</h2>}
+      {children !== undefined && children}
+    </div>
   );
 };
-
 export default Section;
